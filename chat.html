@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackerAI - محادثة اختراق مباشرة</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="matrix-bg"></div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐉</span>
+                    <span class="logo-text">Hacker<span class="accent">AI</span></span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">الرئيسية</a>
+                    <a href="chat.html" class="active">المحادثة المباشرة</a>
+                    <a href="tools.html">الأدوات الهجومية</a>
+                    <a href="results.html">نتائج الاختراق</a>
+                </div>
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="chat-page">
+        <div class="container">
+            <div class="chat-layout">
+                <!-- الشريط الجانبي -->
+                <aside class="chat-sidebar">
+                    <div class="sidebar-section">
+                        <h4><i class="fas fa-history"></i> تاريخ الجلسات</h4>
+                        <div class="session-list" id="sessionList">
+                            <div class="session-item active" data-session="1">
+                                <i class="fas fa-terminal"></i>
+                                <span>جلسة اختراق example.com</span>
+                                <small>منذ 5 دقائق</small>
+                            </div>
+                            <div class="session-item" data-session="2">
+                                <i class="fas fa-bug"></i>
+                                <span>فحص ثغرات SQL</span>
+                                <small>منذ ساعة</small>
+                            </div>
+                            <div class="session-item" data-session="3">
+                                <i class="fas fa-network-wired"></i>
+                                <span>مسح الشبكة الداخلية</span>
+                                <small>منذ 3 ساعات</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-section">
+                        <h4><i class="fas fa-cog"></i> الإعدادات الهجومية</h4>
+                        <div class="attack-settings">
+                            <label>
+                                <span>نظام الهدف</span>
+                                <select id="targetOS">
+                                    <option value="auto">تلقائي</option>
+                                    <option value="linux">Linux</option>
+                                    <option value="windows">Windows</option>
+                                    <option value="mac">macOS</option>
+                                    <option value="android">Android</option>
+                                    <option value="ios">iOS</option>
+                                </select>
+                            </label>
+                            <label>
+                                <span>مستوى التخفي</span>
+                                <select id="stealthLevel">
+                                    <option value="low">منخفض</option>
+                                    <option value="medium" selected>متوسط</option>
+                                    <option value="high">عالي</option>
+                                    <option value="paranoid">بارانويا</option>
+                                </select>
+                            </label>
+                            <label>
+                                <span>نوع البايولود</span>
+                                <select id="payloadType">
+                                    <option value="reverse_shell">Reverse Shell</option>
+                                    <option value="bind_shell">Bind Shell</option>
+                                    <option value="web_shell">Web Shell</option>
+                                    <option value="meterpreter">Meterpreter</option>
+                                    <option value="custom">مخصص</option>
+                                </select>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="autoExploit" checked>
+                                <span>استغلال تلقائي</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="bypassWAF" checked>
+                                <span>تجاوز WAF</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="encryptPayload">
+                                <span>تشفير البايولود</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="sidebar-section">
+                        <button class="btn btn-primary btn-block" id="newSessionBtn">
+                            <i class="fas fa-plus"></i> جلسة جديدة
+                        </button>
+                    </div>
+                </aside>
+
+                <!-- منطقة الدردشة -->
+                <main class="chat-main">
+                    <div class="chat-header">
+                        <div class="chat-header-info">
+                            <div class="chat-avatar">
+                                <i class="fas fa-skull"></i>
+                            </div>
+                            <div>
+                                <h3>HackerAI Agent</h3>
+                                <span class="status online">
+                                    <span class="status-dot"></span>
+                                    جاهز للاختراق | وضع هجومي
+                                </span>
+                            </div>
+                        </div>
+                        <div class="chat-header-actions">
+                            <button class="btn-icon" id="fullscreenBtn" title="شاشة كاملة">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                            <button class="btn-icon" id="exportSessionBtn" title="تصدير الجلسة">
+                                <i class="fas fa-download"></i>
+                            </button>
+                            <button class="btn-icon" id="clearSessionBtn" title="مسح الجلسة">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- رسالة الترحيب -->
+                        <div class="message system welcome-msg">
+                            <div class="msg-badge">نظام</div>
+                            <div class="message-content">
+                                <div class="message-text">
+                                    <p><strong>🐉 HackerAI Agent جاهز</strong></p>
+                                    <p>مرحباً بك في وضع الاختراق المباشر. أنا وكيل HackerAI الهجومي.</p>
+                                    <p>لدي القدرة على:</p>
+                                    <ul>
+                                        <li><span class="highlight">توليد Exploits</span> - SQLi, XSS, RCE, LFI, SSRF, Deserialization</li>
+                                        <li><span class="highlight">Reverse Shells</span> - Python, PHP, Bash, PowerShell, Netcat, MSFVenom</li>
+                                        <li><span class="highlight">مسح الثغرات</span> - Nmap, Nuclei, Nikto, WPScan</li>
+                                        <li><span class="highlight">تجاوز الحماية</span> - WAF Bypass, AMSI Bypass, AV Evasion</li>
+                                        <li><span class="highlight">هندسة عكسية</span> - تحليل باينري، فك تشفير، فك obfuscation</li>
+                                    </ul>
+                                    <p class="example-prompt"><i class="fas fa-lightbulb"></i> جرب: "اصنع لي reverse shell على port 4444"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-input-area">
+                        <div class="input-toolbar">
+                            <button class="toolbar-btn" id="insertCodeBtn" title="إدراج كود">
+                                <i class="fas fa-code"></i> كود
+                            </button>
+                            <button class="toolbar-btn" id="insertFileBtn" title="رفع ملف">
+                                <i class="fas fa-file-upload"></i> ملف
+                            </button>
+                            <button class="toolbar-btn" id="runCommandBtn" title="تشغيل أمر">
+                                <i class="fas fa-terminal"></i> أمر
+                            </button>
+                            <div class="toolbar-select-wrapper">
+                                <select id="modelSelect">
+                                    <option value="hackerai-pro">HackerAI Pro (مستوى عالي)</option>
+                                    <option value="gpt-4o">GPT-4o</option>
+                                    <option value="claude-3.5">Claude 3.5 Sonnet</option>
+                                    <option value="deepseek-v3">DeepSeek V3</option>
+                                    <option value="llama-3-70b">Llama 3 70B</option>
+                                    <option value="mixtral-8x22b">Mixtral 8x22B</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-wrapper">
+                            <textarea 
+                                id="chatInput" 
+                                class="chat-input" 
+                                placeholder="اكتب هدفك الهجومي هنا... مثال: 'افحص example.com وأعطني تقرير بالثغرات'" 
+                                rows="1"
+                            ></textarea>
+                            <button class="btn-send" id="sendMessage">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>هجوم</span>
+                            </button>
+                        </div>
+                        <div class="quick-actions">
+                            <span>هجمات سريعة:</span>
+                            <button class="quick-btn" data-prompt="اعطني reverse shell بلغة python">Reverse Shell</button>
+                            <button class="quick-btn" data-prompt="افحص example.com">مسح سريع</button>
+                            <button class="quick-btn" data-prompt="كود PHP shell بسيط">PHP Shell</button>
+                            <button class="quick-btn" data-prompt="payload SQL injection">SQLi Payload</button>
+                        </div>
+                    </div>
+                </main>
+
+                <!-- لوحة المعلومات -->
+                <aside class="chat-panel">
+                    <div class="panel-section">
+                        <h4><i class="fas fa-crosshairs"></i> الهدف الحالي</h4>
+                        <div class="target-info">
+                            <div class="target-field">
+                                <label>الهدف:</label>
+                                <input type="text" id="targetInput" placeholder="example.com">
+                            </div>
+                            <button class="btn btn-primary btn-sm btn-block" id="scanTargetBtn">
+                                <i class="fas fa-bolt"></i> ابدأ الفحص
+                            </button>
+                        </div>
+                    </div>
+                    <div class="panel-section">
+                        <h4><i class="fas fa-microchip"></i> حالة الوكيل</h4>
+                        <div class="agent-status">
+                            <div class="status-item">
+                                <span>الحالة:</span>
+                                <span class="badge badge-success">نشط</span>
+                            </div>
+                            <div class="status-item">
+                                <span>أوامر منفذة:</span>
+                                <span id="cmdCount">0</span>
+                            </div>
+                            <div class="status-item">
+                                <span>ثغرات مكتشفة:</span>
+                                <span id="vulnCount">0</span>
+                            </div>
+                            <div class="status-item">
+                                <span>وقت التشغيل:</span>
+                                <span id="uptime">00:00:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-section">
+                        <h4><i class="fas fa-list"></i> النتائج السريعة</h4>
+                        <div class="quick-results" id="quickResults">
+                            <p class="text-muted">لم يتم تنفيذ أي هجوم بعد</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal إدراج الكود -->
+    <div class="modal-overlay" id="codeModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>إدراج كود هجومي</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <label>نوع الكود:</label>
+                <select id="codeTypeSelect">
+                    <option value="exploit">Exploit</option>
+                    <option value="payload">Payload</option>
+                    <option value="shell">Shellcode</option>
+                    <option value="scanner">سكريبت فحص</option>
+                </select>
+                <label>اللغة:</label>
+                <select id="codeLangSelect">
+                    <option value="python">Python</option>
+                    <option value="php">PHP</option>
+                    <option value="bash">Bash</option>
+                    <option value="powershell">PowerShell</option>
+                    <option value="ruby">Ruby</option>
+                    <option value="go">Go</option>
+                    <option value="c">C</option>
+                    <option value="rust">Rust</option>
+                </select>
+                <label>الكود:</label>
+                <textarea id="codeTextArea" rows="10" placeholder="الصق الكود الهجومي هنا..."></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-close">إلغاء</button>
+                <button class="btn btn-primary" id="injectCodeBtn">حقن الكود</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/chat.js"></script>
+</body>
+</html>
