@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackerAI - نتائج الاختراق</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="matrix-bg"></div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐉</span>
+                    <span class="logo-text">Hacker<span class="accent">AI</span></span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">الرئيسية</a>
+                    <a href="chat.html">المحادثة المباشرة</a>
+                    <a href="tools.html">الأدوات الهجومية</a>
+                    <a href="results.html" class="active">نتائج الاختراق</a>
+                </div>
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="results-page">
+        <div class="container">
+            <div class="section-header">
+                <h2>نتائج <span class="gradient-text">الاختراق والتقارير</span></h2>
+                <p>سجل كامل بجميع عمليات الاختراق والثغرات المكتشفة</p>
+            </div>
+
+            <!-- لوحة التحكم -->
+            <div class="results-dashboard">
+                <div class="dashboard-card critical">
+                    <div class="dashboard-icon"><i class="fas fa-skull"></i></div>
+                    <div class="dashboard-info">
+                        <span class="dashboard-number" id="criticalCount">7</span>
+                        <span class="dashboard-label">ثغرات حرجة</span>
+                    </div>
+                </div>
+                <div class="dashboard-card high">
+                    <div class="dashboard-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="dashboard-info">
+                        <span class="dashboard-number" id="highCount">12</span>
+                        <span class="dashboard-label">ثغرات عالية</span>
+                    </div>
+                </div>
+                <div class="dashboard-card medium">
+                    <div class="dashboard-icon"><i class="fas fa-exclamation"></i></div>
+                    <div class="dashboard-info">
+                        <span class="dashboard-number" id="mediumCount">23</span>
+                        <span class="dashboard-label">ثغرات متوسطة</span>
+                    </div>
+                </div>
+                <div class="dashboard-card low">
+                    <div class="dashboard-icon"><i class="fas fa-info"></i></div>
+                    <div class="dashboard-info">
+                        <span class="dashboard-number" id="lowCount">45</span>
+                        <span class="dashboard-label">ثغرات منخفضة</span>
+                    </div>
+                </div>
+                <div class="dashboard-card total">
+                    <div class="dashboard-icon"><i class="fas fa-list"></i></div>
+                    <div class="dashboard-info">
+                        <span class="dashboard-number" id="totalScans">87</span>
+                        <span class="dashboard-label">إجمالي الفحوصات</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- فحص سريع -->
+            <div class="quick-scan">
+                <h3><i class="fas fa-bolt"></i> فحص هدف جديد</h3>
+                <div class="scan-form">
+                    <input type="text" id="scanTarget" placeholder="أدخل الهدف (IP, domain, URL)">
+                    <select id="scanType">
+                        <option value="full">فحص شامل</option>
+                        <option value="quick">فحص سريع</option>
+                        <option value="web">ثغرات ويب</option>
+                        <option value="network">ثغرات شبكة</option>
+                        <option value="wordpress">ووردبريس</option>
+                    </select>
+                    <select id="scanSeverity">
+                        <option value="all">جميع المستويات</option>
+                        <option value="critical">حرجة فقط</option>
+                        <option value="high">عالية فأكثر</option>
+                    </select>
+                    <button class="btn btn-primary" id="startScanBtn">
+                        <i class="fas fa-radiation"></i>
+                        ابدأ الفحص
+                    </button>
+                </div>
+            </div>
+
+            <!-- جدول النتائج -->
+            <div class="results-table-wrapper">
+                <div class="table-header">
+                    <h3><i class="fas fa-table"></i> سجل عمليات الاختراق</h3>
+                    <div class="table-actions">
+                        <button class="btn-icon" title="تصدير CSV"><i class="fas fa-file-csv"></i></button>
+                        <button class="btn-icon" title="تصدير PDF"><i class
